@@ -1,0 +1,228 @@
+Script started on Thu Mar 16 01:09:11 2017
+Invoke .bashrc
+[?1034hbash-3.2$ make clean
+rm -f *.o *~ movClient
+bash-3.2$ make
+cc -Wall -g -c  -I/usr/local/include/json-c  movieClient.c  -o movieClient.o
+cc -o movClient movieClient.o -L/usr/local/lib -ljson-c 
+Simple compiler named movClient has been compiled
+bash-3.2$ movClient 192.168.12.6 5001
+Start to connect to server 192.168.12.6 with port 5001
+Search movies according to the following criteria.
+
+Movie title:war
+
+Genres(Adventure|Animation|Comedy|Family|Fantasy|Musical|Romance|Action|Sci-Fi|Mystery|Drama):
+
+Actor/Actress 1:
+
+Actor/Actress 2:
+
+Actor/Actress 3:
+
+Director:
+
+From year:
+
+Country:
+
+Search movies?(Y/N):y
+Searching movies ......
+Start no: 0, total records: 64
+Index  Movie_id                      Movie_title           Movie_year      Movie_genres       Movie_score     Movie_country
+===========================================================================================================================
+    0      27                 Captain America: Civil War     2016       Action|Adventure|Sci     8                  USA 
+    1     108                                   Warcraft     2016       Action|Adventure|Fan     7                  USA 
+    2     244                 The Huntsman: Winter's War     2016       Action|Adventure|Dra     6                  USA 
+    3    4907                      Shooting the Warwicks     2015              Comedy|Drama      6                  USA 
+    4    1731                           A Warrior's Tail     2015       Adventure|Animation|     4                Russia 
+    5    1347                Dragon Nest: Warriors' Dawn     2014       Adventure|Animation|     6                China 
+    6    3371                        That Awkward Moment     2014            Comedy|Romance      6                  USA 
+    7    3828                     Let's Kill Ward's Wife     2014              Comedy|Crime      5                  USA 
+    8    3813                                Born of War     2014       Action|Drama|Thrille     4                   UK 
+    9      46                                World War Z     2013       Action|Adventure|Hor     7                  USA 
+===========================================================================================================================
+Choose the index from the list(0 - 9) to see details(-1 to skip)0
+mov_id: 27 
+color: Color 
+director_name: Anthony Russo 
+num_critic_for_reviews: 516 
+duration: 147 
+actor_2_name: Scarlett Johansson 
+genres: Action|Adventure|Sci-Fi 
+actor_1_name: Robert Downey Jr. 
+movie_title: Captain America: Civil War 
+cast_total_facebook_likes: 64798 
+actor_3_name: Chris Evans 
+plot_keywords: based on comic book|knife|marvel cinematic universe|returning character killed off|superhero 
+movie_imdb_link: http://www.imdb.com/title/tt3498820/?ref_=fn_tt_tt_1 
+num_user_for_reviews: 1022 
+language: English 
+country: USA 
+content_rating: PG-13 
+title_year: 2016 
+imdb_score: 8.2 
+aspect_ratio: 2.35 
+movie_facebook_likes: 72000 
+===========================================================================================================================
+Choose the index from the list(0 - 9) to see details(-1 to skip)9
+mov_id: 46 
+color: Color 
+director_name: Marc Forster 
+num_critic_for_reviews: 654 
+duration: 123 
+actor_2_name: Brad Pitt 
+genres: Action|Adventure|Horror|Sci-Fi|Thriller 
+actor_1_name: Peter Capaldi 
+movie_title: World War Z 
+cast_total_facebook_likes: 32392 
+actor_3_name: Mireille Enos 
+plot_keywords: chaos|disease|infection|pandemic|zombie 
+movie_imdb_link: http://www.imdb.com/title/tt0816711/?ref_=fn_tt_tt_1 
+num_user_for_reviews: 995 
+language: English 
+country: USA 
+content_rating: PG-13 
+title_year: 2013 
+imdb_score: 7.0 
+aspect_ratio: 2.35 
+movie_facebook_likes: 129000 
+===========================================================================================================================
+Choose the index from the list(0 - 9) to see details(-1 to skip)-1
+
+There are 53 matched move records left. Do you want to see more?(Y/N):y
+Searching movies ......
+Start no: 10, total records: 64
+Index  Movie_id                      Movie_title           Movie_year      Movie_genres       Movie_score     Movie_country
+===========================================================================================================================
+   10    1614                                Warm Bodies     2013       Comedy|Horror|Romanc     6                  USA 
+   11     674                             This Means War     2012       Action|Comedy|Romanc     6                  USA 
+   12    1978                                    Warrior     2011               Drama|Sport      8                  USA 
+   13     327                         The Flowers of War     2011       Drama|History|Romanc     7                China 
+   14     604                                  War Horse     2011                 Drama|War      7                  USA 
+   15    3013                              5 Days of War     2011          Action|Drama|War      5                Georgia 
+   16    1174                          The Warrior's Way     2010       Action|Fantasy|Weste     6                New Zealand 
+   17    3324      Ultramarines: A Warhammer 40000 Movie     2010       Action|Animation|Fan     5                   UK 
+   18    3858                        Life During Wartime     2009              Comedy|Drama      6                  USA 
+   19    5023                           Breaking Upwards     2009                   Romance      6                  USA 
+===========================================================================================================================
+Choose the index from the list(10 - 19) to see details(-1 to skip)15
+mov_id: 3013 
+color: Color 
+director_name: Renny Harlin 
+num_critic_for_reviews: 74 
+duration: 113 
+actor_2_name: Kenneth Cranham 
+genres: Action|Drama|War 
+actor_1_name: Richard Coyle 
+movie_title: 5 Days of War 
+cast_total_facebook_likes: 708 
+actor_3_name: Ana Imnadze 
+plot_keywords: cameraman|epic battle|journalist|south ossetia|street shootout 
+movie_imdb_link: http://www.imdb.com/title/tt1486193/?ref_=fn_tt_tt_1 
+num_user_for_reviews: 61 
+language: English 
+country: Georgia 
+content_rating: R 
+title_year: 2011 
+imdb_score: 5.6 
+aspect_ratio: 2.35 
+movie_facebook_likes: 0 
+===========================================================================================================================
+Choose the index from the list(10 - 19) to see details(-1 to skip)-1
+
+There are 43 matched move records left. Do you want to see more?(Y/N):n
+
+Quit?(Y/N):n
+Search movies according to the following criteria.
+
+Movie title:war
+
+Genres(Adventure|Animation|Comedy|Family|Fantasy|Musical|Romance|Action|Sci-Fi|Mystery|Drama):
+
+Actor/Actress 1:Robert Downey
+
+Actor/Actress 2:
+
+Actor/Actress 3:
+
+Director:
+
+From year:
+
+Country:
+
+Search movies?(Y/N):y
+Searching movies ......
+Start no: 0, total records: 1
+Index  Movie_id                      Movie_title           Movie_year      Movie_genres       Movie_score     Movie_country
+===========================================================================================================================
+    0      27                 Captain America: Civil War     2016       Action|Adventure|Sci     8                  USA 
+===========================================================================================================================
+Choose the index from the list(0 - 0) to see details(-1 to skip)0
+mov_id: 27 
+color: Color 
+director_name: Anthony Russo 
+num_critic_for_reviews: 516 
+duration: 147 
+actor_2_name: Scarlett Johansson 
+genres: Action|Adventure|Sci-Fi 
+actor_1_name: Robert Downey Jr. 
+movie_title: Captain America: Civil War 
+cast_total_facebook_likes: 64798 
+actor_3_name: Chris Evans 
+plot_keywords: based on comic book|knife|marvel cinematic universe|returning character killed off|superhero 
+movie_imdb_link: http://www.imdb.com/title/tt3498820/?ref_=fn_tt_tt_1 
+num_user_for_reviews: 1022 
+language: English 
+country: USA 
+content_rating: PG-13 
+title_year: 2016 
+imdb_score: 8.2 
+aspect_ratio: 2.35 
+movie_facebook_likes: 72000 
+===========================================================================================================================
+Choose the index from the list(0 - 0) to see details(-1 to skip)-1
+Search movies according to the following criteria.
+
+Movie title:
+
+Genres(Adventure|Animation|Comedy|Family|Fantasy|Musical|Romance|Action|Sci-Fi|Mystery|Drama):
+
+Actor/Actress 1:Robert Downey
+
+Actor/Actress 2:
+
+Actor/Actress 3:
+
+Director:
+
+From year:
+
+Country:
+
+Search movies?(Y/N):y
+Searching movies ......
+Start no: 0, total records: 26
+Index  Movie_id                      Movie_title           Movie_year      Movie_genres       Movie_score     Movie_country
+===========================================================================================================================
+    0      27                 Captain America: Civil War     2016       Action|Adventure|Sci     8                  USA 
+    1     983                                  The Judge     2014               Crime|Drama      7                  USA 
+    2      32                                 Iron Man 3     2013       Action|Adventure|Sci     7                  USA 
+    3     212         Sherlock Holmes: A Game of Shadows     2011       Action|Adventure|Cri     7                  USA 
+    4      80                                 Iron Man 2     2010       Action|Adventure|Sci     7                  USA 
+    5     662                                   Due Date     2010              Comedy|Drama      6                  USA 
+    6     366                            Sherlock Holmes     2009       Action|Adventure|Cri     7                  USA 
+    7     786                                The Soloist     2009       Biography|Drama|Musi     6                   UK 
+    8      69                                   Iron Man     2008       Action|Adventure|Sci     7                  USA 
+    9     363                             Tropic Thunder     2008             Action|Comedy      7                  USA 
+===========================================================================================================================
+Choose the index from the list(0 - 9) to see details(-1 to skip)-1
+
+There are 15 matched move records left. Do you want to see more?(Y/N):n
+
+Quit?(Y/N):y
+bash-3.2$ exit
+exit
+
+Script done on Thu Mar 16 01:11:08 2017

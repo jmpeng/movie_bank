@@ -120,6 +120,7 @@ int main( int argc, char *argv[] ) {
          exit(0);
       }
       else {
+         printf("Create a child process %d.\n", pid);
          close(newsockfd);
       }
 		
@@ -139,7 +140,7 @@ void doprocessing (int sock) {
    /* Set up connection to mysql server */
    con = setup_mysql();
    if(con == NULL) {
-      printf("Failed to connect to mysql, terminate ...\n");
+      printf("%d: Failed to connect to mysql, terminate ...\n", getpid());
       close(sock);
       exit(1);
    }
@@ -151,17 +152,17 @@ void doprocessing (int sock) {
       len = readline(sock,buffer,BUFSIZE);
    
       if (len == 0) {
-         printf("Disconnected by client\n");
+         printf("%d: Disconnected by client\n", getpid());
          break;
       }else if (len < 0) {
          perror("ERROR reading from socket");
          break;
       }
-      printf("Received message(len=%ld): %s\n",len, buffer);
+      printf("%d: Received message(len=%ld): %s\n", getpid(), len, buffer);
 
       /* Receive "quit" from client, terminate the corresponding child's process */
-      if(strcmp(buffer, "quit") == 0) {
-         printf("quit...\n");
+      if(strncmp(buffer, "quit", 4) == 0) {
+         printf("%d: quit...\n", getpid());
          break;
       }
 
@@ -171,12 +172,13 @@ void doprocessing (int sock) {
 
       /* Add '\n' to the end of the message and send it to client */
       buffer[len++] = '\n';
+printf("Sending: len=%ld, %s", len, buffer);
       len = writen(sock, buffer, len);
-   
       if (len < 0) {
          perror("ERROR writing to socket");
          break;
       }
+      printf("%d: Sent message with length=%ld\n", getpid(), len);
    }
 
    /* Close mysql connection */

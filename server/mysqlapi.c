@@ -7,6 +7,7 @@
 #include <my_global.h>
 #include <mysql.h>
 #include <json.h>
+#include <unistd.h>
 
 #include "../inc/movie.h"
 
@@ -15,7 +16,7 @@ extern char key[][32];
 /* Deal with the error situation */
 void finish_with_error(MYSQL *con)
 {
-  fprintf(stderr, "%s\n", mysql_error(con));
+  fprintf(stderr, "%d: %s\n", getpid(), mysql_error(con));
   mysql_close(con);
   return;
 }
@@ -31,7 +32,7 @@ MYSQL *setup_mysql()
   
    if (con == NULL)
    {
-      fprintf(stderr, "mysql_init() failed\n");
+      fprintf(stderr, "%d: mysql_init() failed\n", getpid());
       return NULL;
    }  
   
@@ -109,7 +110,7 @@ json_object * query_mysql(json_object *jobj, MYSQL *con) {
          pstr = whereClause + strlen(whereClause);
          sprintf(pstr, "%s like \'%%%s%%\' and ", key1, pstr1);
       } else {
-         printf("Wrong type of key: %s\n", key1);
+         printf("%d: Wrong type of key: %s\n", getpid(), key1);
       }
    }
   
@@ -124,7 +125,7 @@ json_object * query_mysql(json_object *jobj, MYSQL *con) {
 
    /* Construct the select command for mysql to search all the matched records in order to get the total number */
    sprintf(selectClause, "SELECT * FROM movie %s ORDER BY title_year DESC, imdb_score DESC;", whereClause);
-   fprintf(stdout, "%s\n", selectClause);
+   fprintf(stdout, "%d: %s\n", getpid(), selectClause);
 
   if (mysql_query(con, selectClause))
   {
@@ -145,12 +146,12 @@ json_object * query_mysql(json_object *jobj, MYSQL *con) {
    mysql_free_result(result);
    result = NULL;
 
-   printf("total_num=%d\n", total_num); 
+   printf("%d: total_num=%d\n", getpid(), total_num); 
    if (total_num == 0) return NULL;
 
    /* Construct the select command for mysql to search 10 records starting from start_no */
    sprintf(selectClause, "SELECT * FROM movie %s ORDER BY title_year DESC, imdb_score DESC limit %d,10;", whereClause, start_no);
-   fprintf(stdout, "%s\n", selectClause);
+   fprintf(stdout, "%d: %s\n", getpid(), selectClause);
  
   if (mysql_query(con, selectClause)) 
   {
